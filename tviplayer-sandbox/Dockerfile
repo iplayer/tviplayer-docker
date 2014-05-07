@@ -43,6 +43,8 @@ RUN cat /host-key.pub >> /root/.ssh/authorized_keys
 
 ADD start_sandbox.sh /start_sandbox.sh
 
-ENTRYPOINT "/start_sandbox.sh"
+RUN /start_sandbox.sh
+
+ENTRYPOINT "/watch_sandbox.sh"
 
 

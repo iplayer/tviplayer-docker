@@ -1,0 +1,9 @@
+# Filesystem
+.DS_Store
+*.swp
+
+# Because obviously!
+*.pem
+
+chef/*
+*.pub

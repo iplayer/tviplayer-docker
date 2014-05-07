@@ -38,3 +38,5 @@ RUN yum install -y nodejs npm ruby19 rubygems
 RUN echo "gem: --no-ri --no-rdoc" >> /etc/gemrc
 
 EXPOSE 80
+EXPOSE 81
+EXPOSE 82
