@@ -1,0 +1,50 @@
+[sandbox]
+name=BBC Sandbox repository
+baseurl=https://yum.dev.bbc.co.uk/sandbox
+enabled=1
+gpgcheck=0
+sslclientcert = /root/.yum/dev.bbc.co.uk.pem
+sslclientkey = /root/.yum/dev.bbc.co.uk.key
+sslcacert = /etc/ca/ca.pem
+sslverify = 1
+
+[bbc-int]
+name=BBC Int Repository
+baseurl=https://yum.dev.bbc.co.uk/int
+enabled=0
+gpgcheck=0
+sslclientcert = /root/.yum/dev.bbc.co.uk.pem
+sslclientkey = /root/.yum/dev.bbc.co.uk.key
+sslcacert = /etc/ca/ca.pem
+sslverify = 1
+
+[bbc-test]
+name=BBC Test Repository
+baseurl=https://yum.dev.bbc.co.uk/test
+enabled=0
+gpgcheck=0
+sslclientcert = /root/.yum/dev.bbc.co.uk.pem
+sslclientkey = /root/.yum/dev.bbc.co.uk.key
+sslcacert = /etc/ca/ca.pem
+sslverify = 1
+
+
+[bbc-stage]
+name=BBC Stage Repository
+baseurl=https://yum.dev.bbc.co.uk/stage
+enabled=0
+gpgcheck=0
+sslclientcert = /root/.yum/dev.bbc.co.uk.pem
+sslclientkey = /root/.yum/dev.bbc.co.uk.key
+sslcacert = /etc/ca/ca.pem
+sslverify = 1
+
+[bbc-live]
+name=BBC Live Repository
+baseurl=https://yum.dev.bbc.co.uk/live
+enabled=1
+gpgcheck=0
+sslclientcert = /root/.yum/dev.bbc.co.uk.pem
+sslclientkey = /root/.yum/dev.bbc.co.uk.key
+sslcacert = /etc/ca/ca.pem
+sslverify = 1
