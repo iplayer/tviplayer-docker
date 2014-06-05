@@ -28,7 +28,7 @@ RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 RUN sed -ri 's/#UsePAM no/UsePAM no/g' /etc/ssh/sshd_config
 
 ADD host-key.pub /host-key.pub
-RUN cat /host-key.pub >> /root/.ssh/authorized_keys
+RUN mkdir /root/.ssh -p && cat /host-key.pub >> /root/.ssh/authorized_keys
 
 ADD start_sandbox.sh /start_sandbox.sh
 
