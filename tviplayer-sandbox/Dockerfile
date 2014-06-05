@@ -37,11 +37,6 @@ RUN git clone git@github.com:iplayer/responsive-web.git /mnt/hgfs/workspace/tvip
 RUN git clone git@github.com:iplayer/bamboo.git /mnt/hgfs/workspace/bamboo
 RUN git clone git@github.com:iplayer/tviplayerrouting.git /mnt/hgfs/workspace/tviplayerrouting
 
-#Sandbox routing
-RUN /mnt/hgfs/workspace/tviplayer/scripts/build/aws-sandbox/setup/moveStaticServePort.sh
-
-# Install app grunt and app dependencies
-RUN cd /mnt/hgfs/workspace/tviplayer && npm install && (./node_modules/.bin/grunt yum || true)
 
 RUN /start_sandbox.sh
 

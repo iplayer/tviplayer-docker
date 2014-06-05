@@ -8,4 +8,5 @@ sudo docker.io build -t tviplayer-sandbox ./tviplayer-sandbox/
 
 sudo docker.io build -t tviplayer-node ./tviplayer-node/
 
+sudo docker.io build -t tviplayer-instance ./tviplayer-instance/
 
