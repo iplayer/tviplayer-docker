@@ -10,17 +10,6 @@ ADD git-ssh.sh git-ssh.sh
 RUN chmod +x git-ssh.sh
 ENV GIT_SSH /git-ssh.sh
 
-# Get repos
-RUN git clone git@github.com:iplayer/responsive-web.git /mnt/hgfs/workspace/tviplayer
-RUN git clone git@github.com:iplayer/bamboo.git /mnt/hgfs/workspace/bamboo
-RUN git clone git@github.com:iplayer/tviplayerrouting.git /mnt/hgfs/workspace/tviplayerrouting
-
-#Sandbox routing
-RUN /mnt/hgfs/workspace/tviplayer/scripts/build/aws-sandbox/setup/moveStaticServePort.sh
-
-# Install app grunt and app dependencies
-RUN cd /mnt/hgfs/workspace/tviplayer && npm install && (./node_modules/.bin/grunt yum || true)
-
 # Some random broken App dependencies
 RUN yum install -y bbc-static-swfobject
 RUN yum install -y bbc-pal-personalisation || true
@@ -42,6 +31,17 @@ ADD host-key.pub /host-key.pub
 RUN cat /host-key.pub >> /root/.ssh/authorized_keys
 
 ADD start_sandbox.sh /start_sandbox.sh
+
+# Get repos
+RUN git clone git@github.com:iplayer/responsive-web.git /mnt/hgfs/workspace/tviplayer
+RUN git clone git@github.com:iplayer/bamboo.git /mnt/hgfs/workspace/bamboo
+RUN git clone git@github.com:iplayer/tviplayerrouting.git /mnt/hgfs/workspace/tviplayerrouting
+
+#Sandbox routing
+RUN /mnt/hgfs/workspace/tviplayer/scripts/build/aws-sandbox/setup/moveStaticServePort.sh
+
+# Install app grunt and app dependencies
+RUN cd /mnt/hgfs/workspace/tviplayer && npm install && (./node_modules/.bin/grunt yum || true)
 
 RUN /start_sandbox.sh
 
