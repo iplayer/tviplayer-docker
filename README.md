@@ -1,15 +1,19 @@
 This repo is able to set up a host machine with docker & serf installed. The ability to launch new sandboxes with tviplayer running inside of them. 
 
+This repo requires Ubuntu 14.04 or greater, Since 14 Docker is now a native package and fully supported.
+
 Installation
 ------------
 
-Run `./scripts/setupHost.sh` to ....setup the host machine. Installs docker and serf on the host.
+Run `./scripts/setupHost.sh` to install and setup docker and serf on the host.
 
-You will need a BBC developer certificate which needs to be placed in `pal-sandbox/certificates` as `certificate.pem` which contains your private & certificate parts one after the other.
+You will need a BBC developer certificate which needs to be placed in 
+`pal-sandbox/certificates/certificate.pem` and should contain your private & certificate parts one after the other.
 
-You also need to add a certificate that will allow access to github (to clone private stuff). Place it in  `tviplayer-sandbox/` as `github-key.pem`.
+You also need to add a certificate that will allow access to github (to clone private stuff) in `tviplayer-sandbox/github-key.pem`.
 
-Same goes for your SSH Key (to allow you to SSH in to container). Place your public key in `tviplayer-sandbox` as  `host-key.pub`.
+Same goes for your SSH Key (to allow you to SSH in to container). 
+Place your public key in `tviplayer-sandbox/host-key.pub`.
 
 Then run `./scripts/rebuild.sh` and hope for the best.
 
