@@ -37,6 +37,7 @@ RUN git clone git@github.com:iplayer/responsive-web.git /mnt/hgfs/workspace/tvip
 RUN git clone git@github.com:iplayer/bamboo.git /mnt/hgfs/workspace/bamboo
 RUN git clone git@github.com:iplayer/tviplayerrouting.git /mnt/hgfs/workspace/tviplayerrouting
 
+RUN cd /mnt/hgfs/workspace/tviplayer && (./node_modules/.bin/grunt yum || true)
 
 RUN /start_sandbox.sh
 
