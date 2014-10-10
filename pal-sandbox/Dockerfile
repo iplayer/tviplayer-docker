@@ -1,4 +1,4 @@
-FROM tianon/centos:5.9
+FROM joshrp/centos59-base
 MAINTAINER Josh Priestley <josh.priestley@bbc.co.uk>
 
 # Directory setup
@@ -28,10 +28,11 @@ RUN /usr/sbin/reithproxies off
 
 ADD bbc.conf /etc/bbc.conf
 
-# BBC PAL
+RUN echo "NETWORKING=no" > /etc/sysconfig/network
+# # BBC PAL
 RUN yum install -y libpng bbc-pal-sandbox-packages || yum install -y bbc-pal-sandbox-packages # first one fails for non-fatal errors so running it again should return a zero exit code
 
-RUN echo "NETWORKING=yes" >> /etc/sysconfig/network
+RUN echo "NETWORKING=yes" > /etc/sysconfig/network
 
 # Node & Ruby
 RUN yum install -y nodejs npm ruby19 rubygems
