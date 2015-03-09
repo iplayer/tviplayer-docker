@@ -6,7 +6,7 @@ This will create a sandbox specific to TViPlayer with code and dependencies read
 Installation
 ------------
 
-Add your github key in this folder as `github-key.pem`.
+It expects to find `responsive-web` and `tviplayerrouting` folders within the `repos` directory to copy them in
 
 Running
 -------
