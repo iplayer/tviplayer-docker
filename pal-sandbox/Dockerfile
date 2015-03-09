@@ -1,4 +1,4 @@
-FROM joshrp/centos59-base
+FROM centos:centos5
 MAINTAINER Josh Priestley <josh.priestley@bbc.co.uk>
 
 # Directory setup
@@ -37,7 +37,3 @@ RUN echo "NETWORKING=yes" > /etc/sysconfig/network
 # Node & Ruby
 RUN yum install -y nodejs npm ruby19 rubygems
 RUN echo "gem: --no-ri --no-rdoc" >> /etc/gemrc
-
-EXPOSE 80
-EXPOSE 81
-EXPOSE 82

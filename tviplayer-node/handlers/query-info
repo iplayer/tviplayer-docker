@@ -1,4 +1,0 @@
-#!/bin/bash 
-
-echo "Hai!"
-exit 0

@@ -29,3 +29,4 @@ RUN cd /mnt/hgfs/workspace/tviplayer && (./node_modules/.bin/grunt yum || true)
 RUN cd /mnt/hgfs/workspace/tviplayer && ./node_modules/.bin/grunt exec:composer
 
 ENTRYPOINT ["bash", "-c"]
+
